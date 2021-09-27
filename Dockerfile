@@ -39,5 +39,5 @@ COPY ApertifVisualization.ipynb ${HOME}
 
 # start JupyterLab server in tutorials dir
 USER ${NB_USER}
-WORKDIR ${HOME}
+#WORKDIR ${HOME}
 
