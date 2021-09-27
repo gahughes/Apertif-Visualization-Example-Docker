@@ -2,7 +2,7 @@
 #
 
 FROM continuumio/miniconda3:4.7.12
-MAINTAINER Gammapy developers <gammapy@googlegroups.com>
+MAINTAINER ESAP
 
 RUN pip install --no-cache notebook jupyterlab
 
