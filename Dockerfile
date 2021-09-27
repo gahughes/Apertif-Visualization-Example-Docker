@@ -20,7 +20,7 @@ RUN mamba install -q -y pyyaml
 RUN python binder.py
 #RUN conda env create -f environment.yml
 
-# add gammapy user running the jupyter notebook process
+# add esap user running the jupyter notebook process
 ENV NB_USER esap
 ENV NB_UID 1000
 ENV HOME /home/${NB_USER}
@@ -30,7 +30,6 @@ RUN adduser --disabled-password \
     --uid ${NB_UID} \
     ${NB_USER}
 
-
 # setting ownerships
 USER root
 RUN chown -R ${NB_USER}:${NB_USER} ${HOME}
@@ -39,5 +38,6 @@ COPY ApertifVisualization.ipynb ${HOME}
 
 # start JupyterLab server in tutorials dir
 USER ${NB_USER}
-#WORKDIR ${HOME}
+WORKDIR ${HOME}
 
+ENTRYPOINT bash
