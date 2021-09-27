@@ -14,7 +14,7 @@ COPY binder.py tmp/
 COPY environment.txt tmp/environment.yml 
 
 WORKDIR tmp/
-RUN conda update conda
+#RUN conda update conda
 RUN conda install -c conda-forge mamba
 RUN mamba install -q -y pyyaml
 RUN python binder.py
@@ -40,4 +40,4 @@ COPY ApertifVisualization.ipynb ${HOME}
 USER ${NB_USER}
 WORKDIR ${HOME}
 
-ENTRYPOINT bash
+#ENTRYPOINT bash
