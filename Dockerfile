@@ -1,4 +1,4 @@
-# This is the Dockerfile to run Gammapy on Binder.
+# This is the Dockerfile to run ESAP Demo on Binder 
 #
 
 FROM continuumio/miniconda3:4.7.12
@@ -14,11 +14,10 @@ COPY binder.py tmp/
 COPY environment.txt tmp/environment.yml 
 
 WORKDIR tmp/
-#RUN conda update conda
+RUN conda update conda
 RUN conda install -c conda-forge mamba
 RUN mamba install -q -y pyyaml
 RUN python binder.py
-#RUN conda env create -f environment.yml
 
 # add esap user running the jupyter notebook process
 ENV NB_USER esap
@@ -34,7 +33,7 @@ RUN adduser --disabled-password \
 USER root
 RUN chown -R ${NB_USER}:${NB_USER} ${HOME}
 
-COPY ApertifVisualization.ipynb ${HOME}
+COPY *.ipynb ${HOME}
 
 # start JupyterLab server in tutorials dir
 USER ${NB_USER}
