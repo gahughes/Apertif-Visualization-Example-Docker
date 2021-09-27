@@ -41,4 +41,3 @@ COPY ApertifVisualization.ipynb ${HOME}
 USER ${NB_USER}
 WORKDIR ${HOME}
 
-ENTRYPOINT bash
