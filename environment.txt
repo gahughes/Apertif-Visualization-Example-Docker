@@ -1,0 +1,26 @@
+name: esap-demo
+
+channels:
+- conda-forge
+
+dependencies:
+  - numpy
+  - matplotlib
+  - pandas
+  - hips
+  - astropy
+  - pyvo
+  - widgetsnbextension
+  - pip
+  - jupyter_contrib_nbextensions
+  - curl
+  - jq
+  - ipywidgets
+  - matplotlib
+  - plotly
+  - ipyaladin
+  - astroquery
+
+  - pip:
+    - "git+https://git.astron.nl/astron-sdc/esap-userprofile-python-client"
+
